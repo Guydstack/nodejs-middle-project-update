@@ -21,7 +21,7 @@ const events_router = require("./routes/events");
 const orders_router = require("./routes/orders");
 
 app.use(cors({
-  origin: /https:\/\/nodejs-middle-project-client-update\.onrender\.com$/, // Update to match your client's domain
+  origin: "*",
   credentials: true,
 }));
 
