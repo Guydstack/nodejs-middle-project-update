@@ -1,12 +1,13 @@
+//יצרנו אינטרקציה עם מודול שמטפל במשתנים סביבתיים
+require('dotenv').config();
 const express = require("express");
+const https = require('https');
 const app = express();
 const path = require("path");
 
 
 //מוסיף מאפיין של cookie לבקשת HTTP
 const cookieParser = require('cookie-parser');
-//יצרנו אינטרקציה עם מודול שמטפל במשתנים סביבתיים
-require('dotenv').config();
 //מודול שדואג שכל בקשה שתשלח אל השרת תתקבל
 const cors = require('cors');
 //מייבא את הקובץ קונפגיורציה של המסד נתונים
@@ -19,7 +20,11 @@ const workers_router = require("./routes/workers");
 const events_router = require("./routes/events");
 const orders_router = require("./routes/orders");
 
-app.use(cors());
+app.use(cors({
+  origin: /\.onrender\.com$/, // Allows all subdomains under onrender.com
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "client")));
 app.use(express.static(path.join(__dirname, "public/uploads")));
