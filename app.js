@@ -4,15 +4,21 @@ const express = require("express");
 const https = require('https');
 const app = express();
 const path = require("path");
+//מודול שדואג שכל בקשה שתשלח אל השרת תתקבל
+const cors = require('cors');
 
 
 //מוסיף מאפיין של cookie לבקשת HTTP
 const cookieParser = require('cookie-parser');
-//מודול שדואג שכל בקשה שתשלח אל השרת תתקבל
-const cors = require('cors');
 //מייבא את הקובץ קונפגיורציה של המסד נתונים
 const db = require('./db/mongoose');
 db();
+
+app.use(cors({
+  origin: "https://nodejs-middle-project-client-update.onrender.com/managin.html",
+  credentials: true,
+}));
+
 //ייבאנו את הראוטרים שמטפלים בבקשות שנשלחות אל השרת
 const clients_router = require("./routes/clients");
 const dishes_router = require("./routes/dishes");
@@ -20,10 +26,7 @@ const workers_router = require("./routes/workers");
 const events_router = require("./routes/events");
 const orders_router = require("./routes/orders");
 
-app.use(cors({
-  origin: "*",
-  credentials: true,
-}));
+
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "client")));
