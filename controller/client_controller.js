@@ -85,10 +85,16 @@ module.exports = {
     user_name,
     premission
   }
+      console.log(payload);
 
   const token = jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:1000 * 60 * 60});
 
-  res.cookie("token",token);
+    res.cookie("token", token, {
+  sameSite: "None", // Allow cross-origin cookies
+  secure: true, // Requires HTTPS
+});
+
+  console.log('Cookie set:', token);
 
   return res.status(200).json({
     success:true,
