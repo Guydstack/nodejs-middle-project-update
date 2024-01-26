@@ -90,7 +90,7 @@ module.exports = {
   const token = jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:1000 * 60 * 60});
 
     res.cookie("token", token, {
-  sameSite: "None", // Allow cross-origin cookies
+  sameSite: "Lax", // Allow cross-origin cookies
   secure: true, // Requires HTTPS
 });
 
