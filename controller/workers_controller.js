@@ -92,8 +92,11 @@ module.exports = {
     user_name,
     premission
   }
+      
 
   const token = jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:1000 * 60 * 60});
+
+        console.log('Cookie set:', token);
 
     res.cookie("token", token, {
   //httpOnly: true, // The cookie is not accessible via JavaScript
