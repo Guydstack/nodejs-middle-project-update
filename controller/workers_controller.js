@@ -101,7 +101,6 @@ module.exports = {
 
 res.cookie("token", token, {
   sameSite: "None",
-  path: "/",
   secure: true,
 });
 
