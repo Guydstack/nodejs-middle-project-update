@@ -100,7 +100,6 @@ module.exports = {
 
     res.cookie("token", token, {
   //httpOnly: true, // The cookie is not accessible via JavaScript
-  sameSite: "None", // Allow cross-origin cookies
   secure: true, // Requires HTTPS
 });
 
