@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const jwtAuth = async(req,res,next) => {
 try {
  const token = req.cookies["token"];
+ console.log('Token:', token);
+
 
 if(!token) throw new Error("no token provided");
 
