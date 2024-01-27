@@ -98,10 +98,13 @@ module.exports = {
 
         console.log('Cookie set:', token);
 
+
   res.cookie("token", token, {
-  sameSite: "None", // Allow cross-origin cookies
-  secure: true, // Requires HTTPS
+  domain: "nodejs-middle-project-update.onrender.com",
+  sameSite: "None",
+  secure: true,
 });
+
 
   return res.status(200).json({
     success:true,
