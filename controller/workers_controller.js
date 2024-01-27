@@ -101,7 +101,6 @@ module.exports = {
   res.cookie("token", token, {
   sameSite: "None", // Allow cross-origin cookies
   secure: true, // Requires HTTPS
-  domain: "nodejs-middle-project-client-update.onrender.com"
 });
 
   return res.status(200).json({
