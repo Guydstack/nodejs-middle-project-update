@@ -100,7 +100,6 @@ module.exports = {
 
 
 res.cookie("token", token, {
-  domain: "nodejs-middle-project-update.onrender.com",
   sameSite: "None",
   path: "/",
   secure: true,
