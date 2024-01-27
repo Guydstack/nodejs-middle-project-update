@@ -99,10 +99,10 @@ module.exports = {
         console.log('Cookie set:', token);
 
 
-  res.cookie("token", token, {
+res.cookie("token", token, {
   domain: "nodejs-middle-project-update.onrender.com",
   sameSite: "None",
-    path=/;,
+  path: "/",
   secure: true,
 });
 
