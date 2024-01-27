@@ -15,7 +15,7 @@ const db = require('./db/mongoose');
 db();
 
 app.use(cors({
-  origin: 'https://nodejs-middle-project-client-update.onrender.com/managin.html',
+  origin: '.onrender.com',
   credentials: true,
 }));
 
