@@ -15,7 +15,7 @@ const {
 router.get("/all", getAllProducts);
 router.get("/get_by_id/:id", getProductById);
 router.post("/add",jwtAuth,addProduct);
-router.put("/update/:id",updateProduct);
+router.put("/update/:id",jwtAuth,updateProduct);
 router.delete("/delete/:id",jwtAuth,deleteProduct);
 
 module.exports = router;
