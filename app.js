@@ -14,7 +14,10 @@ const cookieParser = require('cookie-parser');
 const db = require('./db/mongoose');
 db();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://nodejs-middle-project-client-update.onrender.com',
+  credentials: true
+}));
 
 //ייבאנו את הראוטרים שמטפלים בבקשות שנשלחות אל השרת
 const clients_router = require("./routes/clients");
