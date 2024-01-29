@@ -5,6 +5,7 @@ const jwtAuth = async(req,res,next) => {
 try {
  const token = req.cookies["token"];
  console.log('Token:', token);
+ console.log(req.headers.authorization)
 
 
 if(!token) throw new Error("no token provided");
