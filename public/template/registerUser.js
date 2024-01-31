@@ -24,7 +24,7 @@ exports.sendUserMail = (userName) => {
 
             <p>
             Feel free to explore our website and discover all the amazing features we have to offer. Click
-            <a href="http://localhost:3000/index.html" style="color: #007BFF; text-decoration: underline;">here</a>
+            <a href="https://nodejs-middle-project-client-update.onrender.com/index.html" style="color: #007BFF; text-decoration: underline;">here</a>
             to visit our home page.
             </p>
     
